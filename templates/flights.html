@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="lv">
+<head>
+    <meta charset="utf-8">
+    <title>Reservation</title>
+    <meta name="description" content="Rezervesanas lapa">
+    <link rel="stylesheet" href="static/css/flights.css">
+</head>
+<body>
+    <header>
+        <a href="/login"><button class="loginButton">Ienākt</button></a>
+        <div class='FlightsList'>
+            <div class='FlightType'>
+                <h2>
+                    Lidojuma veids:
+                </h2>
+                <button class='ButtonCircle ButtonCircle2nd'>
+                    Vienvirziens
+                </button>
+                <button class='ButtonCircle'>
+                    Turp un atpakaļ
+                </button>
+            </div>
+            <article>
+                <form>
+                    <h3>
+                        Datums
+                    </h3>
+                    <label for="From">No </label>
+                    <input type="date" id="From" name="From">
+                    <label for="To">Līdz </label>
+                    <input type="date" id="To" name="To">
+                </form>
+                <table>
+                    <tr class="Table_parameters">
+                        <td>Datums</td>
+                        <td>Izlidošanas laiks</td>
+                        <td>Reisa nummurs</td>
+                        <td>No</td>
+                        <td>Uz</td>
+                        <td>Lidosta</td>
+                        <td>Cena</td>
+                    </tr>
+                    <tr class="Table_info">
+                        <td>13.11.2021</td>
+                        <td>8:00</td>
+                        <td>00000001</td>
+                        <td>Rīgas</td>
+                        <td>Prāgu</td>
+                        <td>Rīgas galvenā</td>
+                        <td>100 €</td>
+                        <td>
+                            <a href="/rezervacija"><button class='Rezervet'>Rezervēt</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </div>
+        <h1>Atrodi sev tīkamo ceļojumu un rezervē to jau tagad !</h1>
+    </header>
+    <footer>
+        <div class='ButtonTrio'>
+            <button class='button'>
+                Populārakais
+            </button>
+            <button class='button'>
+                Lētakais
+            </button>
+            <button class='button'>
+                Viss biežak izvēletākais
+            </button>
+        </div>
+        <div class='Pictures'>
+            <div class="photo">
+                <img class="firstPhoto" src="static/photo/Paris.jpg" alt="Paris photo">
+                <p class="first">
+                    Parīze
+                    <span class='Blue-text'>
+                        sākot no 199 €
+                    </span>
+                </p>
+            </div>
+            <div class="photo">
+                <img class="secondPhoto" src="static/photo/Prague.jpg" alt="Prague photo">
+                <p class="second">
+                    Prāga
+                    <span class='Blue-text'>
+                        sākot no 100 €
+                    </span>
+                </p>
+            </div>
+            <div class="photo">
+                <img class="thirdPhoto" src="static/photo/London.jpg" alt="London photo">
+                <p class="third">
+                    Londona
+                    <span class='Blue-text'>
+                        sākot no 129 €
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="static/js/flights.js"></script>
+</body>
+</html>

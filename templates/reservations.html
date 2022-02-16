@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/reservations.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <form class="container" method="post">
+    <div class="title">Rezervēšana</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="flight-info">
+            <span class="flight">Lidojums</span>
+            <p class="flight-details">Lidojuma nosaukums</p>
+          </div>
+          <div class="flight-info">
+            <span class="flight">Lidojuma Datums</span>
+            <p class="flight-details">Lidojuma Datums</p>
+          </div>
+          <div class="flight-info">
+            <span class="flight">Lidojuma Laiks</span>
+            <p class="flight-details">Lidojuma Laiks</p>
+          </div>
+          <div class="input-box">
+            <span class="details">Vārds</span>
+            <input type="text" placeholder="Ievadiet vārdu" name="vards" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Uzvārds</span>
+            <input type="text" placeholder="Ievadiet uzvārdu" name="uzvards" required>
+          </div>
+          <div class="input-box">
+            <span class="details">E-Pasts</span>
+            <input type="text" placeholder="Ievadiet E-Pastu" name="epasts" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Telefona Numurs</span>
+            <input type="text" placeholder="Ievadiet telefona numuru" name="telefonaNumurs" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" name="submit" value="Submit" id="Submit" >
+        </div>
+      </form>
+      <div class="mainBtn">
+      <a href="/"><button class="mainButton" type="button">Atgriezties</button></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script type="text/javascript" src="static/js/reservation.js"></script>
+</html>

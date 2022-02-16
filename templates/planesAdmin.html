@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="lv">
+<head>
+    <meta charset="utf-8">
+    <title>Lidmašīnas</title>
+    <meta name="description" content="Lidmašīnas">
+    <link rel="stylesheet" href="static/css/planesAdmin.css">
+</head>
+<body>
+    <header>
+    <a href="/login"><button class="loginButton">Ienākt</button></a>
+    <h1>Lidmašīnas</h1>
+    <div class="adminInput">
+        <p>Nosaukums:</p> <input type="text" name="name" id="name" />
+        <p>Vietu Skaits:</p> <input type="text" name="places" id="places"/>
+        <p>Razosanas gads:</p> <input type="text" name="year" id="year"/>
+        <p>Lidosta:</p> <input type="text" name="airport" id="airport"/>
+        <br>
+        <button onclick="addPlane();">Pievienot</button>
+    </div>
+    <div class='planeList'>
+            <table id="planeTable">
+                  <tr class="tableTitle">
+                      <td>Lidmašīnas nosaukums</td>
+                      <td>Vietu skaits</td>
+                      <td>Ražošanas gads</td>
+                      <td>Lidosta</td>
+                </tr>
+                <tr class="tableInfo">
+                    <td>Boing-3000</td>
+                    <td>300</td>
+                    <td>2/3/2000</td>
+                    <td>Latvia</td>
+                </tr>
+            </table>
+        </div>
+    </header>
+    <footer>
+        </div>
+        <div class='pictures'>
+            <div class="photo">
+                <img class="firstPhoto" src="static/photo/firstPlane.jpg" alt="First Plane Photo">
+            </div>
+            <div class="photo">
+                <img class="secondPhoto" src="static/photo/secondPlane.jpg" alt="Second Plane Photo">
+            </div>
+            <div class="photo">
+                <img class="thirdPhoto" src="static/photo/thirdPlane.jpg" alt="Third Plane Photo">
+            </div>
+        </div>
+    </footer>
+    <script src="static/js/planesAdmin.js"></script>
+</body>
+</html>
