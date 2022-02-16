@@ -41,18 +41,20 @@
                         <td>Lidosta</td>
                         <td>Cena</td>
                     </tr>
+                    {% for el in lidojumi%}
                     <tr class="Table_info">
-                        <td>13.11.2021</td>
-                        <td>8:00</td>
-                        <td>00000001</td>
-                        <td>Rīgas</td>
-                        <td>Prāgu</td>
-                        <td>Rīgas galvenā</td>
-                        <td>100 €</td>
+                        <td>{{ el.lidojumaDatums }}<br></td>
+                        <td>{{ el.lidojumaDatums }}<br></td>
+                        <td>{{ el.fid }}<br></td>
+                        <td>{{ el.no }}<br></td>
+                        <td>{{ el.uz }}<br></td>
+                        <td>{{ el.lidosta }}<br></td>
+                        <td>{{ el.cena }}<br></td>
                         <td>
                             <a href="/rezervacija"><button class='Rezervet'>Rezervēt</button></a>
                         </td>
                     </tr>
+                    {% endfor %}
                 </table>
             </article>
         </div>

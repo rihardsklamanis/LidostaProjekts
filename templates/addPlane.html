@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <title>Main Page</title>
+  <meta name="description" content="Lidostas sakumlapa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/addPlane.css">
+</head>
+<body>
+    <h1>Pievienot lidojumu</h1>
+    <form method="post">
+        <input type="text" name="planeName" id="planeName" class="form-control" placeholder="Lidmasinas Nosaukums" required><br>
+        <input type="number" name="planePlaces" id="planePlaces" class="form-control" placeholder="Vietu Skaits" required><br>
+        <input type="date" name="planeReleaseDate", id="planeReleaseDate" class="form-control" required><br>
+        <input type="text" name="planeAirport" id="planeAirport" class="form-control" placeholder="Lidosta" required><br>
+        <input type="submit" class="btn btn-success" value="Pievienot">
+    </form>
+
+    <script src="static/js/addPlane.js"></script>
+</body>
+</html>

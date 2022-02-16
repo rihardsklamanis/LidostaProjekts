@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <title>Main Page</title>
+  <meta name="description" content="Lidostas sakumlapa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/addFlight.css">
+</head>
+<body>
+    <h1>Pievienot lidojumu</h1>
+    <form method="post">
+        <input type="date" name="lidojumaDatums", id="lidojumaDatums" class="form-control" required><br>
+        <input type="text" name="no" id="no" class="form-control" placeholder="Lidojums No" required><br>
+        <input type="text" name="uz" id="uz" class="form-control" placeholder="Lidojums Uz" required><br>
+        <input type="text" name="lidosta" id="lidosta" class="form-control" placeholder="Lidosta" required><br>
+        <input type="number" name="cena" id="cena" class="form-control" placeholder="Cena" required><br>
+        <input type="submit" class="btn btn-success" value="Pievienot">
+    </form>
+
+    <script src="static/js/addFlight.js"></script>
+</body>
+</html>

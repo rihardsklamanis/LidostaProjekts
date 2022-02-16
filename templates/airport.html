@@ -17,11 +17,13 @@
                       <td>Saisinātais Lidostas nosaukums</td>
                       <td>Lidostas Adrese</td>
                 </tr>
+                {% for element in airportdata %}
                 <tr class="tableInfo">
-                    <td>Starptautiskā lidosta Rīga</td>
-                    <td>RIX</td>
-                    <td>P133, Mārupe</td>
+                    <td>{{ element.airportName }}</td>
+                    <td>{{ element.shortenAirportName }}</td>
+                    <td>{{ element.airportAddress }}</td>
                 </tr>
+                {% endfor %}
             </table>
         </div>
     </header>

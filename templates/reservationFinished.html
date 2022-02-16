@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/reservationFinished.css')}}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<div class="container">
+    <div class="title">Jūs veiksmīgi rezervējāt lidojumu!</div>
+    <div class="content">
+        <div>
+            <h2><b>Vārds: {{rezervacija.vards}}</b></h2>
+            <h2><b>Uzvārds: {{rezervacija.uzvards}}</b></h2>
+            <h2><b>Ē-Pasts: {{rezervacija.epasts}}</b></h2>
+            <h2><b>Telefona numurs: {{rezervacija.telefonaNumurs}}</b></h2>
+            <button class="downloadBtn">Lejuplādēt</button>
+        </div>
+        <br>
+        <a href="/"><button class="mainButton">Atgriezties</button></a>
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="static/js/reservationFinished.js"></script>
+</html>

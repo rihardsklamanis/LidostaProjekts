@@ -12,18 +12,20 @@
     <h1>Lidmašīnas</h1>
     <div class='planeList'>
             <table>
-                  <tr class="tableTitle">
-                      <td>Lidmašīnas nosaukums</td>
-                      <td>Vietu skaits</td>
-                      <td>Ražošanas gads</td>
-                      <td>Lidosta</td>
+                <tr class="tableTitle">
+                    <td>Lidmašīnas nosaukums</td>
+                    <td>Vietu skaits</td>
+                    <td>Ražošanas gads</td>
+                    <td>Lidosta</td>
                 </tr>
+                {% for elmnt in planesdata%}
                 <tr class="tableInfo">
-                    <td>Boing-3000</td>
-                    <td>300</td>
-                    <td>2/3/2000</td>
-                    <td>Latvia</td>
+                    <td>{{ elmnt.planeName }}</td>
+                    <td>{{ elmnt.planePlaces }}</td>
+                    <td>{{ elmnt.planeReleaseDate }}</td>
+                    <td>{{ elmnt.planeAirport }}</td>
                 </tr>
+                {% endfor %}
             </table>
         </div>
     </header>
