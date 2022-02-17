@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Lidmašīnas</title>
     <meta name="description" content="Lidmašīnas">
-    <link rel="stylesheet" href="static/css/planes.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/planes.css')}}">
 </head>
 <body>
     <header>
@@ -24,6 +24,9 @@
                     <td>{{ elmnt.planePlaces }}</td>
                     <td>{{ elmnt.planeReleaseDate }}</td>
                     <td>{{ elmnt.planeAirport }}</td>
+                    <td>
+                        <a href="/lidmasinas/{{elmnt.pid}}/del"><button class="delete btn" id="delete">Dzēst</button></a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>

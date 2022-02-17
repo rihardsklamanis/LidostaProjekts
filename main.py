@@ -23,6 +23,7 @@ class Rezervacija(db.Model):
 class Lidojumi(db.Model):
     fid = db.Column(db.Integer, primary_key=True)
     lidojumaDatums = db.Column(db.String(300), nullable=False)
+    lidojumaLaiks = db.Column(db.String(300), nullable=False)
     no = db.Column(db.String(300), nullable=False)
     uz = db.Column(db.String(300), nullable=False)
     lidosta = db.Column(db.String(300), nullable=False)
@@ -93,6 +94,19 @@ def register():
 def nauraVienigaLapa():
     lidojumi = Lidojumi.query.order_by(Lidojumi.lidojumaDatums).all()
     return render_template("flights.html", lidojumi=lidojumi)
+
+
+@app.route("/saraksts/<int:fid>/del")
+def delete(fid):
+    lidojumi_delete = Lidojumi.query.get_or_404(fid)
+    try:
+        db.session.delete(lidojumi_delete)
+        db.session.commit()
+
+        lidojumi = Lidojumi.query.order_by(Lidojumi.lidojumaDatums).all()
+        return render_template("flights.html", lidojumi=lidojumi) 
+    except:
+        return "Error"   
   
 
 @app.route("/lidmasinas")
@@ -101,22 +115,48 @@ def planes():
     return render_template("planes.html", planesdata=planesdata)
 
 
+@app.route("/lidmasinas/<int:pid>/del")
+def delete_plane(pid):
+    planesdata_Delete = planesData.query.get_or_404(pid)
+
+    try:
+        db.session.delete(planesdata_Delete)
+        db.session.commit()
+        planesdata = planesData.query.order_by(planesData.pid).all()
+        return render_template("planes.html", planesdata=planesdata)
+    except:
+        return "Error"   
+
+
 @app.route("/lidostas")
 def airports():
     airportdata = airportData.query.order_by(airportData.aid).all()
     return render_template("airport.html", airportdata=airportdata)
 
+@app.route("/lidostas/<int:aid>/del")
+def delete_airport(aid):
+    airportdata_Delete = airportData.query.get_or_404(aid)
+
+    try:
+        db.session.delete(airportdata_Delete)
+        db.session.commit()
+        airportdata = airportData.query.order_by(airportData.aid).all()
+        return render_template("airport.html", airportdata=airportdata)
+    except:
+        return "Error"    
+
+         
 @app.route("/pievienotLidojumu", methods=['POST', 'GET'])
 def pievienotLidojumu():
     if request.method == "POST":
-        lidojumaDatums = datetime.strptime(request.form['lidojumaDatums'],'%Y-%m-%d')
-        fid = request.form("fid")
+        lidojumaDatums = request.form["lidojumaDatums"]
+        lidojumaLaiks = request.form["lidojumaLaiks"]
         no = request.form["no"]
         uz = request.form["uz"]
         lidosta = request.form["lidosta"]
         cena = request.form["cena"]
 
-        lidojumi = Lidojumi(lidojumaDatums=lidojumaDatums,fid=fid, no=no, uz=uz, lidosta=lidosta, cena=cena)
+        lidojumi = Lidojumi(lidojumaDatums=lidojumaDatums, lidojumaLaiks=lidojumaLaiks, no=no, uz=uz, lidosta=lidosta, cena=cena)
 
         try:
             db.session.add(lidojumi)
@@ -133,7 +173,7 @@ def addPlane():
     if request.method == "POST":
         planeName = request.form["planeName"]
         planePlaces = request.form["planePlaces"]
-        planeReleaseDate = datetime.strptime(request.form['planeReleaseDate'],'%Y-%m-%d')
+        planeReleaseDate = request.form["planeReleaseDate"]
         planeAirport = request.form["planeAirport"]
 
         planesdata = planesData(planeName=planeName, planePlaces=planePlaces, planeReleaseDate=planeReleaseDate, planeAirport=planeAirport)

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Reservation</title>
     <meta name="description" content="Rezervesanas lapa">
-    <link rel="stylesheet" href="static/css/flights.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/flights.css')}}">
 </head>
 <body>
     <header>
@@ -44,14 +44,18 @@
                     {% for el in lidojumi%}
                     <tr class="Table_info">
                         <td>{{ el.lidojumaDatums }}<br></td>
-                        <td>{{ el.lidojumaDatums }}<br></td>
+                        <td>{{ el.lidojumaLaiks }}<br></td>
                         <td>{{ el.fid }}<br></td>
                         <td>{{ el.no }}<br></td>
                         <td>{{ el.uz }}<br></td>
                         <td>{{ el.lidosta }}<br></td>
                         <td>{{ el.cena }}<br></td>
                         <td>
-                            <a href="/rezervacija"><button class='Rezervet'>Rezervēt</button></a>
+                            <div id="btnContainer">
+                                <a href="/rezervacija"><button class='Rezervet btn'>Rezervēt</button></a>
+                                <a href="/saraksts/{{el.fid}}/del"><button class="delete btn" id="delete">Dzēst</button></a>
+                                <button class="update btn" id="update">Rediģēt</button>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}

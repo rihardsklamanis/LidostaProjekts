@@ -84,7 +84,7 @@ form{
 
 .FlightsList {
     background-color: #33074E;
-    width: 1200px;
+    width: 1300px;
     height: 700px;
     position: absolute;
     top: 0;
@@ -156,14 +156,20 @@ img {
     height: 100%;
 }
 
+#btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 button {
     border: 1px solid;
     border-color: black;
     background-color: white;
     margin: 5px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 15px;
     color: black;
 }
 

@@ -39,6 +39,21 @@ header {
     border-color: #6495ED;
 }
 
+button {
+    border: 1px solid;
+    border-color: black;
+    background-color: white;
+    margin: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: black;
+}
+
+button:hover {
+    color: gray;
+}
+
 h1 {
     text-align: left;
     margin-left: 70px;

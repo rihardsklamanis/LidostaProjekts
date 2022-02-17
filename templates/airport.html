@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Lidostas</title>
     <meta name="description" content="Lidostas">
-    <link rel="stylesheet" href="static/css/airport.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/airport.css')}}">
 </head>
 <body>
     <header>
@@ -20,8 +20,11 @@
                 {% for element in airportdata %}
                 <tr class="tableInfo">
                     <td>{{ element.airportName }}</td>
-                    <td>{{ element.shortenAirportName }}</td>
+                    <td>{{ element.shortAirportName }}</td>
                     <td>{{ element.airportAddress }}</td>
+                    <td>
+                        <a href="/lidostas/{{element.aid}}/del"><button class="delete btn" id="delete">Dzēst</button></a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
