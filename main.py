@@ -168,6 +168,26 @@ def pievienotLidojumu():
         return render_template("addFlight.html")
 
 
+@app.route("/saraksts/<int:fid>/update", methods=['POST', 'GET'])
+def updateFlight(fid):
+    lidojumi = Lidojumi.query.get(fid) 
+    if request.method == "POST":
+        lidojumi.lidojumaDatums = request.form["lidojumaDatums"]
+        lidojumi.lidojumaLaiks = request.form["lidojumaLaiks"]
+        lidojumi.no = request.form["no"]
+        lidojumi.uz = request.form["uz"]
+        lidojumi.lidosta = request.form["lidosta"]
+        lidojumi.cena = request.form["cena"]
+
+        try:
+            db.session.commit()
+            return redirect("/saraksts")
+        except:
+            return "Error"
+    else:   
+        return render_template("updateFlight.html", lidojumi=lidojumi)        
+
+
 @app.route("/addPlane", methods=['POST', 'GET'])
 def addPlane():
     if request.method == "POST":
@@ -188,6 +208,24 @@ def addPlane():
         return render_template("addPlane.html")
 
 
+@app.route("/lidmasinas/<int:pid>/update", methods=['POST', 'GET'])
+def updatePlanes(pid):
+    planesdata = planesData.query.get(pid) 
+    if request.method == "POST":
+        planesdata.planeName = request.form["planeName"]
+        planesdata.planePlaces = request.form["planePlaces"]
+        planesdata.planeReleaseDate = request.form["planeReleaseDate"]
+        planesdata.planeAirport = request.form["planeAirport"]
+
+        try:
+            db.session.commit()
+            return redirect("/lidmasinas")
+        except:
+            return "Error"
+    else:   
+        return render_template("updatePlane.html", planesdata=planesdata) 
+
+
 @app.route("/addAirport", methods=['POST', 'GET'])
 def addAirport():
     if request.method == "POST":
@@ -205,6 +243,23 @@ def addAirport():
             pass
     else:    
         return render_template("addAirport.html") 
+
+
+@app.route("/lidostas/<int:aid>/update", methods=['POST', 'GET'])
+def updateAirport(aid):
+    airportdata = airportData.query.get(aid) 
+    if request.method == "POST":
+        airportdata.airportName = request.form["airportName"]
+        airportdata.shortAirportName = request.form["shortAirportName"]
+        airportdata.airportAddress = request.form["airportAddress"]
+
+        try:
+            db.session.commit()
+            return redirect("/lidostas")
+        except:
+            return "Error"
+    else:   
+        return render_template("updateAirport.html", airportdata=airportdata) 
 
 
 @app.route("/reservationfinished/<int:id>")

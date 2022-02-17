@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <title>Update Airport</title>
+  <meta name="description" content="Lidostas sakumlapa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/updateAirport.css">
+</head>
+<body>
+    <h1>Pievienot lidojumu</h1>
+    <form method="post">
+        <input type="text" name="airportName" id="airportName" class="form-control" value="{{ airportdata.airportName }}" required><br>
+        <input type="text" name="shortAirportName" id="shortAirportName" class="form-control" value="{{ airportdata.shortAirportName }}" required><br>
+        <input type="text" name="airportAddress" id="airportAddress" class="form-control" value="{{ airportdata.airportAddress}}" required><br>
+        <input type="submit" class="btn btn-success" value="Rediģēt">
+    </form>
+
+    <script src="static/js/updateAirport.js"></script>
+</body>
+</html>

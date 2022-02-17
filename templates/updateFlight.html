@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8">
+  <title>Update Flight</title>
+  <meta name="description" content="Lidostas sakumlapa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/updateFlight.css">
+</head>
+<body>
+    <h1>Pievienot lidojumu</h1>
+    <form method="post">
+        <input type="date" name="lidojumaDatums", id="lidojumaDatums" value="{{ lidojumi.lidojumaDatums }}" class="form-control" required><br>
+        <input type="time" name="lidojumaLaiks", id="lidojumaLaiks" value="{{ lidojumi.lidojumaLaiks }}" class="form-control" required><br>
+        <input type="text" name="no" id="no" class="form-control" value="{{ lidojumi.no }}" required><br>
+        <input type="text" name="uz" id="uz" class="form-control" value="{{ lidojumi.uz }}" required><br>
+        <input type="text" name="lidosta" id="lidosta" class="form-control" value="{{ lidojumi.lidosta }}" required><br>
+        <input type="number" name="cena" id="cena" class="form-control" value="{{ lidojumi.cena }}" required><br>
+        <input type="submit" class="btn btn-success" value="Rediģēt">
+    </form>
+
+    <script src="static/js/updateFlight.js"></script>
+</body>
+</html>
